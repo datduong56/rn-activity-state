@@ -9,10 +9,12 @@ export default function App() {
   React.useEffect(() => {
     const onMoveToBackgroundListener = RNActivityState.onMoveToBackground(
       () => {
+        console.log('onMoveToBackground');
         setAppState('In background');
       }
     );
     const onMoveToAppListener = RNActivityState.onMoveToApp(() => {
+      console.log('onMoveToApp');
       setAppState('In app');
     });
 
